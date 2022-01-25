@@ -6,4 +6,4 @@ Currently it pops out and displays menu items on a click. It retracts on another
 
 I've not yet coded the link functionality of the menu so nothing goes anywhere. 
 
-[There is a live version here](#).
+[There is a live version here](https://jwhodge.github.io/Expanding-Menu/).
