@@ -57,6 +57,7 @@ svg {
 #spark {
   height: 75px;
   width: 53px;
+  cursor: pointer;
 }
 
 polygon {
@@ -145,4 +146,5 @@ polygon {
   padding: 8px;
   top: 30px;
   right: 10px;
+  cursor: pointer;
 }
