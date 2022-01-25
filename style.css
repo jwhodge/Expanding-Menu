@@ -26,7 +26,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 3%;
-  background: linear-gradient(135deg, #121212, #6c756b);
+  background: linear-gradient(135deg, #9d6a89, #6c756b);
   color: #f2f4ff;
 }
 
@@ -48,15 +48,32 @@ svg {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 130px;
+  width: 100%;
   height: 75px;
   font-family: "Bebas Neue", cursive;
   color: ;
 }
 
 #spark {
-  height: 100%;
-  width: 100%;
+  height: 75px;
+  width: 53px;
+}
+
+polygon {
+  pointer-events: none;
+}
+
+.menu-heading {
+  display: none;
+}
+
+.menu-panel.expanded > .logo > .menu-heading {
+  margin: 3px;
+  display: contents;
+}
+
+.menu-panel.expanded > .logo {
+  width: 130px;
 }
 
 /* Menu Panel */
@@ -65,57 +82,67 @@ svg {
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: clamp(250px, 25vw, 350px);
+  width: 60px;
   height: 90vh;
-  background-color: rgba(242, 244, 255, 0.25);
+  background-color: rgba(18, 18, 18, 0.25);
   border-radius: 20px;
   padding: 5px;
+  transition: 250ms ease;
+}
+.menu-panel.expanded {
+  width: clamp(250px, 25vw, 350px);
+  border-radius: 20px;
+  transition: 500ms ease;
 }
 
 .menu-section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
 }
 
-.menu-panel.minimized {
-  width: 50px;
-  border-radius: 8px;
+.menu-panel.expanded > .menu-section {
+  align-items: flex-start;
+  padding-left: 20px;
 }
 
-.menu-heading {
-  margin: 3px;
-}
+/* Menu Content */
 
 .menu-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex: 1;
-  padding: 3px 0 0 20px;
+  padding: 3px 0 0 0px;
 }
+
+.menu-panel.expanded > .menu-item {
+  padding: 3px 0 0 20px;
+  justify-content: flex-start;
+}
+
+/* menu icons */
 
 .fas,
 .fab {
   width: 30px;
-  padding-right: 8px;
+  margin-right: 8px;
+  text-align: center;
 }
 
-#show,
+/* Close Expansion Icon */
+
 #hide {
+  display: none;
+}
+
+.menu-panel.expanded > #hide {
+  display: inline;
   position: absolute;
   padding: 8px;
-  top: 10px;
-}
-
-#hide {
+  top: 30px;
   right: 10px;
-}
-
-#show {
-  left: 10px;
-  display: none;
 }
